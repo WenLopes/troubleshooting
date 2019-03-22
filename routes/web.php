@@ -11,12 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
 
-Route::get('/contract/{customer_id}/{contract_id}', [
-    'as' => 'contract.show',
-    'uses' => 'ContractController@show'
-])->defaults('contract_id', 'LOREN');
-
+Route::get('/contract/{customer_id}/{contract_id?}', ['as' => 'contract.show','uses' => 'ContractController@index'])->defaults('contract_id', 'LOREN');

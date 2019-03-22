@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer("contract.show","App\Http\View\Composers\CurrentDateComposer");
     }
 
     /**
